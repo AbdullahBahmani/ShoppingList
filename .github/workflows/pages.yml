@@ -27,6 +27,8 @@ jobs:
           cache: true
 
       - name: Build web app
+        # CanvasKit is the renderer verified working in iOS Safari. The
+        # --wasm/skwasm renderer renders blank there, so it is not used.
         run: flutter build web --release --base-href=/ShoppingList/
 
       - name: Upload Pages artifact
